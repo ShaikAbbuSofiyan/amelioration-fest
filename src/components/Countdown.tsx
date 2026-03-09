@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-const targetDate = new Date("2026-04-15T09:00:00");
+// 14 days and 18 hours from now (fixed target)
+const targetDate = new Date(Date.now() + (14 * 24 + 18) * 60 * 60 * 1000);
 
 const Countdown = () => {
   const ref = useRef(null);
