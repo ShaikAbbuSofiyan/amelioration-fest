@@ -12,15 +12,14 @@ const branches = [
     name: "Yuga",
     desc: "Coding competitions, hackathons, debugging battles.",
     logo: yugaLogo,
-    href: "https://yuga2026.online",
+    href: "https://yuga2026.onlineuga2026.online",
     color: "hsl(200 100% 50%)",
   },
   {
     dept: "CSM",
     name: "AIzentrix",
     desc: "AI, ML, data science competitions.",
-    logo: csmLogo,
-    href: "#CSM_LINK",
+    logo: csmLoghttps://aizentrixjntuhuces.github.io/aizentrix.github.io/ef: "#CSM_LINK",
     color: "hsl(270 80% 60%)",
   },
   {
