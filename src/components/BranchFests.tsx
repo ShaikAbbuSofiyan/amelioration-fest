@@ -12,7 +12,7 @@ const branches = [
     name: "Yuga",
     desc: "Coding competitions, hackathons, debugging battles.",
     logo: yugaLogo,
-    href: "#CSE_LINK",
+    href: "https://yuga2026.online",
     color: "hsl(200 100% 50%)",
   },
   {
