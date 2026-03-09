@@ -1,47 +1,51 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Brain, Cpu, Cog, Building2, CircuitBoard } from "lucide-react";
+import yugaLogo from "@/assets/yuga.png";
+import csmLogo from "@/assets/csm.png";
+import mechLogo from "@/assets/mech.jpeg";
+import civilLogo from "@/assets/civil.png";
+import eceLogo from "@/assets/ece.png";
 
 const branches = [
+  {
+    dept: "CSE",
+    name: "Yuga",
+    desc: "Coding competitions, hackathons, debugging battles.",
+    logo: yugaLogo,
+    href: "#CSE_LINK",
+    color: "hsl(200 100% 50%)",
+  },
   {
     dept: "CSM",
     name: "AIzentrix",
     desc: "AI, ML, data science competitions.",
-    icon: Brain,
+    logo: csmLogo,
     href: "#CSM_LINK",
     color: "hsl(270 80% 60%)",
-  },
-  {
-    dept: "ECE",
-    name: "Synaptics",
-    desc: "Circuit debugging, IoT, hardware challenges.",
-    icon: CircuitBoard,
-    href: "#ECE_LINK",
-    color: "hsl(180 100% 50%)",
-  },
-  {
-    dept: "CIVIL",
-    name: "Ecstace",
-    desc: "Bridge building, structural design, simulations.",
-    icon: Building2,
-    href: "#CIVIL_LINK",
-    color: "hsl(40 90% 55%)",
   },
   {
     dept: "MECH",
     name: "Mechorrenza",
     desc: "Robotics, design battles, engineering challenges.",
-    icon: Cog,
+    logo: mechLogo,
     href: "#MECH_LINK",
-    color: "hsl(0 80% 55%)",
+    color: "hsl(25 90% 55%)",
   },
   {
-    dept: "CSE",
-    name: "Yuga",
-    desc: "Coding competitions, hackathons, debugging battles.",
-    icon: Cpu,
-    href: "#CSE_LINK",
-    color: "hsl(200 100% 50%)",
+    dept: "CIVIL",
+    name: "Ecstace",
+    desc: "Bridge building, structural design, simulations.",
+    logo: civilLogo,
+    href: "#CIVIL_LINK",
+    color: "hsl(0 0% 70%)",
+  },
+  {
+    dept: "ECE",
+    name: "Synaptics",
+    desc: "Circuit debugging, IoT, hardware challenges.",
+    logo: eceLogo,
+    href: "#ECE_LINK",
+    color: "hsl(195 80% 50%)",
   },
 ];
 
@@ -81,17 +85,9 @@ const BranchFests = () => {
                 (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px ${b.color}22`;
               }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center"
-                  style={{ background: `${b.color}18` }}
-                >
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  >
-                    <b.icon size={24} style={{ color: b.color }} />
-                  </motion.div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 rounded-lg overflow-hidden flex items-center justify-center shrink-0 bg-muted/30">
+                  <img src={b.logo} alt={`${b.name} logo`} className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <span className="text-xs font-medium tracking-wider uppercase text-foreground/40">{b.dept}</span>
