@@ -2,20 +2,25 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { X } from "lucide-react";
 
-const placeholders = Array.from({ length: 8 }, (_, i) => ({
-  id: i,
-  color: [
-    "hsl(200 100% 50%)",
-    "hsl(270 80% 60%)",
-    "hsl(180 100% 50%)",
-    "hsl(320 80% 55%)",
-    "hsl(40 90% 55%)",
-    "hsl(0 80% 55%)",
-    "hsl(150 80% 40%)",
-    "hsl(220 70% 50%)",
-  ][i],
-  label: ["Hackathon Night", "Robotics Arena", "Coding Battle", "Workshop", "Gaming Zone", "Project Expo", "Stage Show", "Awards"][i],
-}));
+import civil2 from "@/assets/gallery/civil2.jpeg";
+import civil3 from "@/assets/gallery/civil3.jpeg";
+import cse1 from "@/assets/gallery/cse1.jpeg";
+import cse2 from "@/assets/gallery/cse2.jpeg";
+import csm1 from "@/assets/gallery/csm1.jpeg";
+import ece1 from "@/assets/gallery/ece1.jpg";
+import mech1 from "@/assets/gallery/mech1.jpeg";
+import mech2 from "@/assets/gallery/mech2.jpeg";
+
+const photos = [
+  { id: 0, src: cse1, label: "Yuga – Hands of Creativity" },
+  { id: 1, src: cse2, label: "Yuga – Team Photo" },
+  { id: 2, src: csm1, label: "AIzentrix – Group Session" },
+  { id: 3, src: mech1, label: "Mechorrenza – Banner" },
+  { id: 4, src: mech2, label: "Mechorrenza – Sports" },
+  { id: 5, src: civil2, label: "Ecstace – Poster Launch" },
+  { id: 6, src: civil3, label: "Ecstace – Banner" },
+  { id: 7, src: ece1, label: "Synaptics – Banner Launch" },
+];
 
 const Gallery = () => {
   const ref = useRef(null);
@@ -35,7 +40,7 @@ const Gallery = () => {
         </motion.h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-          {placeholders.map((item, i) => (
+          {photos.map((item, i) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -44,18 +49,9 @@ const Gallery = () => {
               whileHover={{ scale: 1.05, zIndex: 10 }}
               onClick={() => setSelected(item.id)}
               className="aspect-square rounded-xl cursor-pointer overflow-hidden relative group"
-              style={{
-                background: `linear-gradient(135deg, ${item.color}33, ${item.color}11)`,
-                border: `1px solid ${item.color}22`,
-              }}
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-foreground/30 text-sm font-medium text-center px-2">{item.label}</span>
-              </div>
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3"
-                style={{ background: `linear-gradient(to top, ${item.color}88, transparent)` }}
-              >
+              <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 bg-gradient-to-t from-background/80 to-transparent">
                 <span className="text-foreground text-xs font-semibold">{item.label}</span>
               </div>
             </motion.div>
@@ -63,7 +59,6 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div
@@ -77,15 +72,14 @@ const Gallery = () => {
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
-              className="w-[80vw] max-w-2xl aspect-video rounded-2xl relative"
-              style={{
-                background: `linear-gradient(135deg, ${placeholders[selected].color}33, ${placeholders[selected].color}11)`,
-                border: `1px solid ${placeholders[selected].color}44`,
-              }}
+              className="w-[85vw] max-w-3xl relative"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-foreground/50 text-xl font-montserrat">{placeholders[selected].label}</span>
-              </div>
+              <img
+                src={photos[selected].src}
+                alt={photos[selected].label}
+                className="w-full rounded-2xl object-contain max-h-[80vh]"
+              />
+              <p className="text-center text-foreground/60 mt-3 text-sm font-montserrat">{photos[selected].label}</p>
               <button className="absolute top-4 right-4 text-foreground/60 hover:text-foreground" onClick={() => setSelected(null)}>
                 <X size={24} />
               </button>

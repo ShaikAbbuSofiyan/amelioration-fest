@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const quickLinks = ["Home", "About", "Events", "Gallery", "Contact"];
 const branchLinks = [
-  { name: "Yuga", href: "#CSE_LINK" },
-  { name: "AIzentrix", href: "#CSM_LINK" },
-  { name: "Mechorrenza", href: "#MECH_LINK" },
-  { name: "Ecstace", href: "#CIVIL_LINK" },
-  { name: "Synaptics", href: "#ECE_LINK" },
+  { name: "Yuga", href: "https://yuga2026.online" },
+  { name: "AIzentrix", href: "https://aizentrixjntuhuces.github.io/aizentrix.github.io/" },
+  { name: "Mechorrenza", href: "https://mechorrenza-vibes.lovable.app" },
+  { name: "Ecstace", href: "https://ecsta-ce-civic-spark.lovable.app" },
+  { name: "Synaptics", href: "https://synaptics-26.vercel.app/" },
 ];
 
 const FestFooter = () => {

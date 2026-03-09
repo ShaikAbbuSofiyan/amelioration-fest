@@ -12,7 +12,7 @@ const branches = [
     name: "Yuga",
     desc: "Coding competitions, hackathons, debugging battles.",
     logo: yugaLogo,
-    href: "#CSE_LINK",
+    href: "https://yuga2026.online",
     color: "hsl(200 100% 50%)",
   },
   {
@@ -20,7 +20,7 @@ const branches = [
     name: "AIzentrix",
     desc: "AI, ML, data science competitions.",
     logo: csmLogo,
-    href: "#CSM_LINK",
+    href: "https://aizentrixjntuhuces.github.io/aizentrix.github.io/",
     color: "hsl(270 80% 60%)",
   },
   {
@@ -28,7 +28,7 @@ const branches = [
     name: "Mechorrenza",
     desc: "Robotics, design battles, engineering challenges.",
     logo: mechLogo,
-    href: "#MECH_LINK",
+    href: "https://mechorrenza-vibes.lovable.app",
     color: "hsl(25 90% 55%)",
   },
   {
@@ -36,7 +36,7 @@ const branches = [
     name: "Ecstace",
     desc: "Bridge building, structural design, simulations.",
     logo: civilLogo,
-    href: "#CIVIL_LINK",
+    href: "https://ecsta-ce-civic-spark.lovable.app",
     color: "hsl(0 0% 70%)",
   },
   {
@@ -44,7 +44,7 @@ const branches = [
     name: "Synaptics",
     desc: "Circuit debugging, IoT, hardware challenges.",
     logo: eceLogo,
-    href: "#ECE_LINK",
+    href: "https://synaptics-26.vercel.app/",
     color: "hsl(195 80% 50%)",
   },
 ];
